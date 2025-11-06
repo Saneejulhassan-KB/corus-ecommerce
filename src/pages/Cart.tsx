@@ -13,26 +13,28 @@ const Cart = () => {
       name: "Samsung Galaxy S23 Ultra 5G (Phantom Black, 256GB)",
       price: 89999,
       originalPrice: 124999,
-      image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=200&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=200&h=200&fit=crop",
       quantity: 1,
       inStock: true,
-      seller: "TechWorld Store"
+      seller: "TechWorld Store",
     },
     {
       id: "2",
       name: "Sony WH-1000XM5 Wireless Noise Canceling Headphones",
       price: 24990,
       originalPrice: 34990,
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop",
       quantity: 2,
       inStock: true,
-      seller: "AudioHub"
-    }
+      seller: "AudioHub",
+    },
   ]);
 
   const updateQuantity = (id: string, change: number) => {
-    setCartItems(items =>
-      items.map(item =>
+    setCartItems((items) =>
+      items.map((item) =>
         item.id === id
           ? { ...item, quantity: Math.max(1, item.quantity + change) }
           : item
@@ -41,30 +43,42 @@ const Cart = () => {
   };
 
   const removeItem = (id: string) => {
-    setCartItems(items => items.filter(item => item.id !== id));
+    setCartItems((items) => items.filter((item) => item.id !== id));
   };
 
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const savings = cartItems.reduce((sum, item) => sum + ((item.originalPrice - item.price) * item.quantity), 0);
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const savings = cartItems.reduce(
+    (sum, item) => sum + (item.originalPrice - item.price) * item.quantity,
+    0
+  );
   const delivery = subtotal > 499 ? 0 : 40;
   const total = subtotal + delivery;
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-6 pb-28 md:pb-6">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-text-secondary mb-6">
-          <Link to="/" className="hover:text-primary">Home</Link>
+          <Link to="/" className="hover:text-primary">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-text-primary">Shopping Cart</span>
         </div>
 
         {cartItems.length === 0 ? (
           <div className="text-center py-16">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Your cart is empty</h2>
-            <p className="text-text-secondary mb-6">Add some products to get started!</p>
+            <h2 className="text-2xl font-bold text-text-primary mb-4">
+              Your cart is empty
+            </h2>
+            <p className="text-text-secondary mb-6">
+              Add some products to get started!
+            </p>
             <Link to="/">
               <Button>Continue Shopping</Button>
             </Link>
@@ -94,7 +108,7 @@ const Cart = () => {
                         alt={item.name}
                         className="w-24 h-24 object-cover rounded-lg bg-surface"
                       />
-                      
+
                       <div className="flex-1 space-y-2">
                         <div className="flex justify-between">
                           <h3 className="font-medium text-text-primary line-clamp-2">
@@ -122,13 +136,20 @@ const Cart = () => {
                             ₹{item.originalPrice.toLocaleString()}
                           </span>
                           <Badge variant="secondary" className="text-success">
-                            {Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100)}% off
+                            {Math.round(
+                              ((item.originalPrice - item.price) /
+                                item.originalPrice) *
+                                100
+                            )}
+                            % off
                           </Badge>
                         </div>
 
                         <div className="flex items-center justify-between pt-2">
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-text-secondary">Qty:</span>
+                            <span className="text-sm text-text-secondary">
+                              Qty:
+                            </span>
                             <div className="flex items-center border border-border rounded">
                               <Button
                                 variant="ghost"
@@ -182,14 +203,20 @@ const Cart = () => {
             <div className="space-y-6">
               <Card className="sticky top-24">
                 <CardContent className="p-6 space-y-4">
-                  <h2 className="text-xl font-bold text-text-primary">Order Summary</h2>
-                  
+                  <h2 className="text-xl font-bold text-text-primary">
+                    Order Summary
+                  </h2>
+
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-text-secondary">Subtotal ({cartItems.length} items)</span>
-                      <span className="font-medium">₹{subtotal.toLocaleString()}</span>
+                      <span className="text-text-secondary">
+                        Subtotal ({cartItems.length} items)
+                      </span>
+                      <span className="font-medium">
+                        ₹{subtotal.toLocaleString()}
+                      </span>
                     </div>
-                    
+
                     <div className="flex justify-between">
                       <span className="text-text-secondary">Delivery</span>
                       <span className="font-medium">
@@ -204,7 +231,9 @@ const Cart = () => {
                     {savings > 0 && (
                       <div className="flex justify-between text-success">
                         <span>Total Savings</span>
-                        <span className="font-medium">-₹{savings.toLocaleString()}</span>
+                        <span className="font-medium">
+                          -₹{savings.toLocaleString()}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -219,7 +248,8 @@ const Cart = () => {
                   {delivery > 0 && (
                     <div className="bg-accent-light text-accent p-3 rounded-lg text-sm">
                       <Truck className="h-4 w-4 inline mr-2" />
-                      Add ₹{(499 - subtotal).toLocaleString()} more for FREE delivery
+                      Add ₹{(499 - subtotal).toLocaleString()} more for FREE
+                      delivery
                     </div>
                   )}
 

@@ -85,7 +85,12 @@ const ComparePage = () => {
               {/* Dynamic Features */}
               {featureSections.map((f) => {
                 const value = (product as any)[f.key];
-                if (!value) return <div key={f.key} className="py-4 text-gray-400">—</div>;
+                if (!value)
+                  return (
+                    <div key={f.key} className="py-4 text-gray-400">
+                      —
+                    </div>
+                  );
 
                 return (
                   <div key={f.key} className="py-4 border-t text-sm">

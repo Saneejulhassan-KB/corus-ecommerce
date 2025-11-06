@@ -18,6 +18,8 @@ import {
   Plus,
   Minus,
   MapPin,
+  ThumbsUp,
+  ThumbsDown,
 } from "lucide-react";
 
 const ProductDetail = () => {
@@ -69,21 +71,157 @@ const ProductDetail = () => {
   const reviews = [
     {
       id: 1,
-      user: "Rajesh K.",
+      user: "Ekansh Maheshwari",
       rating: 5,
+      title: "Worth every penny",
       comment:
-        "Excellent phone! Camera quality is outstanding and performance is smooth.",
-      date: "2 days ago",
+        "It's actually the Beast. Go for it. Bass lovers will love the product.",
+      images: [
+        "https://i.pcmag.com/imagery/reviews/01rEkknQmqadJoltyqosMu8-21.fit_lim.size_625x365.v1736264406.jpg",
+        "https://www.trustedreviews.com/wp-content/uploads/sites/7/2024/01/OnePlus-12-review-2-820x461.jpg",
+        "https://imageio.forbes.com/specials-images/imageserve/63e119a4634c9e97dc5133d2/OnePlus-11-5G/960x0.jpg?height=399&width=711&fit=bounds",
+      ],
       verified: true,
+      location: "Kashipur",
+      date: "Sep, 2022",
+      likes: 30,
+      dislikes: 5,
     },
     {
       id: 2,
-      user: "Priya S.",
+      user: "Riya Sharma",
       rating: 4,
+      title: "Excellent camera quality!",
       comment:
-        "Great display and battery life. S Pen is very useful for productivity.",
-      date: "1 week ago",
+        "The camera is amazing, especially in low light. Battery backup could be slightly better.",
+      images: [
+        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600",
+      ],
       verified: true,
+      location: "Mumbai",
+      date: "Jan, 2023",
+      likes: 42,
+      dislikes: 3,
+    },
+    {
+      id: 3,
+      user: "Arjun Patel",
+      rating: 5,
+      title: "Best flagship Android phone",
+      comment:
+        "Performance is top-notch, no lag, and display quality is stunning. Worth the high price.",
+      images: [],
+      verified: true,
+      location: "Ahmedabad",
+      date: "Feb, 2023",
+      likes: 65,
+      dislikes: 2,
+    },
+    {
+      id: 4,
+      user: "Sneha Iyer",
+      rating: 3,
+      title: "Good but not great",
+      comment:
+        "The phone is good overall, but it heats up slightly during gaming sessions.",
+      images: [
+        "https://images.unsplash.com/photo-1606813902784-9d5f2e3b4c92?w=600",
+      ],
+      verified: false,
+      location: "Chennai",
+      date: "Apr, 2023",
+      likes: 20,
+      dislikes: 10,
+    },
+    {
+      id: 5,
+      user: "Rohit Verma",
+      rating: 4,
+      title: "Satisfied with the purchase",
+      comment:
+        "Everything works as expected. Great battery life and smooth experience overall.",
+      images: [],
+      verified: true,
+      location: "Delhi",
+      date: "May, 2023",
+      likes: 38,
+      dislikes: 4,
+    },
+    {
+      id: 6,
+      user: "Anjali Nair",
+      rating: 5,
+      title: "Superb build quality",
+      comment:
+        "Feels premium in hand. The display is bright and colorful. S Pen works flawlessly!",
+      images: [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600",
+      ],
+      verified: true,
+      location: "Kochi",
+      date: "Jun, 2023",
+      likes: 51,
+      dislikes: 1,
+    },
+    {
+      id: 7,
+      user: "Vikram Singh",
+      rating: 2,
+      title: "Not worth the hype",
+      comment:
+        "For this price, I expected better performance. The fingerprint sensor is slow sometimes.",
+      images: [],
+      verified: false,
+      location: "Lucknow",
+      date: "Jul, 2023",
+      likes: 15,
+      dislikes: 22,
+    },
+    {
+      id: 8,
+      user: "Neha Gupta",
+      rating: 4,
+      title: "Amazing display, decent battery",
+      comment:
+        "Display is gorgeous and responsive. Battery life is okay but could use optimization.",
+      images: [
+        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600",
+      ],
+      verified: true,
+      location: "Pune",
+      date: "Aug, 2023",
+      likes: 33,
+      dislikes: 7,
+    },
+    {
+      id: 9,
+      user: "Mohammed Faisal",
+      rating: 5,
+      title: "Beast of a phone!",
+      comment:
+        "No issues so far. Camera, performance, and battery life are all exceptional.",
+      images: [],
+      verified: true,
+      location: "Hyderabad",
+      date: "Oct, 2023",
+      likes: 60,
+      dislikes: 3,
+    },
+    {
+      id: 10,
+      user: "Kavya Menon",
+      rating: 4,
+      title: "Stylish and powerful",
+      comment:
+        "Love the design and feel. Runs all my apps smoothly. Slightly expensive but worth it.",
+      images: [
+        "https://images.unsplash.com/photo-1580910051071-4fb92b39bdbf?w=600",
+      ],
+      verified: true,
+      location: "Bangalore",
+      date: "Nov, 2023",
+      likes: 44,
+      dislikes: 6,
     },
   ];
 
@@ -386,36 +524,81 @@ const ProductDetail = () => {
 
               <div className="md:col-span-12 space-y-4">
                 {reviews.map((review) => (
-                  <Card key={review.id}>
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-text-primary">
-                            {review.user}
-                          </span>
-                          {review.verified && (
-                            <Badge variant="secondary" className="text-xs">
-                              Verified
-                            </Badge>
-                          )}
+                  <Card
+                    key={review.id}
+                    className="border border-border rounded-lg"
+                  >
+                    <CardContent className="p-5">
+                      {/* Rating badge and title */}
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex items-center gap-1 bg-green-600 text-white px-2 py-0.5 rounded text-sm font-medium">
+                          <Star className="h-4 w-4 fill-current" />
+                          {review.rating}
                         </div>
-                        <span className="text-sm text-text-secondary">
-                          {review.date}
+                        <h3 className="font-semibold text-text-primary text-base">
+                          {review.title}
+                        </h3>
+                      </div>
+
+                      {/* Comment */}
+                      <p className="text-text-secondary mb-3 leading-relaxed">
+                        {review.comment}
+                      </p>
+
+                      {/* Review images */}
+                      {review.images && review.images.length > 0 && (
+                        <div className="flex gap-2 mb-3">
+                          {review.images.map((img, index) => (
+                            <img
+                              key={index}
+                              src={img}
+                              alt={`review-${index}`}
+                              className="w-16 h-16 object-cover rounded-md border"
+                            />
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Reviewer info */}
+                      <div className="flex items-center gap-2 text-sm text-text-secondary mb-3">
+                        <span className="font-medium text-text-primary">
+                          {review.user}
                         </span>
+                        {review.verified && (
+                          <Badge
+                            variant="secondary"
+                            className="text-xs flex items-center gap-1"
+                          >
+                            <Shield className="h-3 w-3 text-green-600" />{" "}
+                            Certified Buyer
+                          </Badge>
+                        )}
+                        <span>• {review.location}</span>
+                        <span>• {review.date}</span>
                       </div>
-                      <div className="flex items-center gap-1 mb-2">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className={`h-3 w-3 ${
-                              star <= review.rating
-                                ? "fill-warning text-warning"
-                                : "text-border"
-                            }`}                                                            
-                          />
-                        ))}
+
+                      {/* Like / Dislike section */}
+                      <div className="flex items-center gap-6 text-sm text-text-secondary">
+                        <button
+                          onClick={() => {
+                            review.likes++;
+                          }}
+                          className="flex items-center gap-1 hover:text-primary transition"
+                        >
+                          <ThumbsUp className="h-4 w-4" />
+                          <span>{review.likes}</span>
+                        </button>
+
+                        <button
+                          onClick={() => {
+                            review.dislikes++;
+                          }}
+                          className="flex items-center gap-1 hover:text-primary transition"
+                        >
+                          <ThumbsDown className="h-4 w-4" />
+                          <span>{review.dislikes}</span>
+                        </button>
                       </div>
-                      <p className="text-text-secondary">{review.comment}</p>
                     </CardContent>
                   </Card>
                 ))}

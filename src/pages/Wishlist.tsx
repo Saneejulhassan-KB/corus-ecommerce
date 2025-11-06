@@ -47,7 +47,7 @@ const Wishlist = () => {
   ]);
 
   const removeItem = (id: string) => {
-    setWishlistItems(items => items.filter(item => item.id !== id));
+    setWishlistItems((items) => items.filter((item) => item.id !== id));
   };
 
   const clearAll = () => {
@@ -66,7 +66,9 @@ const Wishlist = () => {
       <main className="container mx-auto px-4 py-6 pb-28 md:pb-6">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-text-secondary mb-6">
-          <Link to="/" className="hover:text-primary">Home</Link>
+          <Link to="/" className="hover:text-primary">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-text-primary">Wishlist</span>
         </div>
@@ -102,7 +104,7 @@ const Wishlist = () => {
                 </Button>
               </div>
 
-              {wishlistItems.map(item => (
+              {wishlistItems.map((item) => (
                 <Card key={item.id} className="overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex gap-4">
@@ -187,9 +189,7 @@ const Wishlist = () => {
 
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-text-secondary">
-                        Total Items
-                      </span>
+                      <span className="text-text-secondary">Total Items</span>
                       <span className="font-medium">
                         {wishlistItems.length}
                       </span>
