@@ -114,7 +114,7 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-4 py-6 pb-28 md:pb-6">
         {/* Breadcrumb */}
         <nav className="text-sm text-text-secondary mb-6">
           <span>Home</span> / <span>Electronics</span> /{" "}
@@ -361,7 +361,7 @@ const ProductDetail = () => {
 
           <TabsContent value="reviews" className="space-y-6">
             <div className="grid md:grid-cols-3 gap-6">
-              <Card>
+              {/* <Card>
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-text-primary mb-2">
                     {product.rating}
@@ -382,9 +382,9 @@ const ProductDetail = () => {
                     {product.reviewCount.toLocaleString()} ratings
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
 
-              <div className="md:col-span-2 space-y-4">
+              <div className="md:col-span-12 space-y-4">
                 {reviews.map((review) => (
                   <Card key={review.id}>
                     <CardContent className="p-6">
@@ -411,7 +411,7 @@ const ProductDetail = () => {
                               star <= review.rating
                                 ? "fill-warning text-warning"
                                 : "text-border"
-                            }`}
+                            }`}                                                            
                           />
                         ))}
                       </div>

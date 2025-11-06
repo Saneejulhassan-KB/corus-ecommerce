@@ -76,7 +76,7 @@ const Checkout = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-4 py-6 pb-28 md:pb-6">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
           <Link to="/cart">

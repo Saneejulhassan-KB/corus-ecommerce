@@ -68,7 +68,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
                     <img
                       src={img}
                       alt={`${product.name}-${i}`}
-                      className="w-full h-80 object-cover rounded-lg select-none"
+                      className="w-full max-h-96 object-contain rounded-lg select-none"
                     />
                   </div>
                 ))}

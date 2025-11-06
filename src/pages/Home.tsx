@@ -115,7 +115,7 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main>
+      <main >
         {/* Hero Section */}
         <section className="">
           <div className=" mx-auto ">
@@ -315,7 +315,10 @@ const Home = () => {
       </main>
 
       {/* Footer */}
+      <div className="pb-20  md:pb-0">
       <Footer />
+      </div>
+      
     </div>
   );
 };

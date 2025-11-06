@@ -45,7 +45,7 @@ const ProductListing = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className=" mx-auto px-4 py-6">
+      <main className=" mx-auto px-4 py-6 pb-28 md:pb-6">
         {/* Breadcrumb */}
         <nav className="text-sm text-text-secondary mb-6">
           <span>Home</span> / <span>Electronics</span> /{" "}

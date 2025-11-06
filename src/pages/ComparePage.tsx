@@ -33,7 +33,7 @@ const ComparePage = () => {
   return (
     <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6 pb-28 md:pb-6">
         <h2 className="text-xl font-semibold">
           Compare {compareList.length} Product
           {compareList.length > 1 ? "s" : ""}
