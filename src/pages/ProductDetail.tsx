@@ -674,7 +674,7 @@ const ProductDetail = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </div>                                                                                
         </section>
       </main>
     </div>
