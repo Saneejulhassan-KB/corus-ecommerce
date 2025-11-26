@@ -149,7 +149,6 @@ const Header = () => {
           </div>
         </div>
 
-        
         {/* Main header */}
         <div className="mx-auto px-4 py-3">
           {/* 🔹 Mobile: Logo (left) + Location (right) */}
@@ -324,14 +323,21 @@ const Header = () => {
                   className="flex-shrink-0 w-16 sm:w-20 md:w-24 text-center group scroll-snap-align-start"
                 >
                   <div className="flex flex-col items-center">
-                    {!isCompact && (
+                    {/* Smooth shrink image container */}
+                    <div
+                      className="transition-all duration-300 overflow-hidden"
+                      style={{
+                        height: isCompact ? "0px" : "56px", // Set your preferred height
+                      }}
+                    >
                       <img
                         src={category.image}
                         alt={category.name}
-                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain mb-1 transition-transform group-hover:scale-110"
-                        style={{ width: "800px" }}
+                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain mx-auto transition-transform group-hover:scale-110"
                       />
-                    )}
+                    </div>
+
+                    {/* Label */}
                     <span className="font-medium truncate transition-all duration-200 text-[10px] sm:text-xs md:text-sm group-hover:text-primary">
                       {category.name}
                     </span>

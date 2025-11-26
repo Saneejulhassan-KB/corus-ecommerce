@@ -21,6 +21,7 @@ import {
   ThumbsUp,
   ThumbsDown,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -677,6 +678,11 @@ const ProductDetail = () => {
           </div>                                                                                
         </section>
       </main>
+
+      {/* Footer */}
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };

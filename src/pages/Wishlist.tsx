@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, X, ArrowLeft, Star, Truck, ShoppingCart } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Wishlist = () => {
   const [wishlistItems, setWishlistItems] = useState([
@@ -219,6 +220,11 @@ const Wishlist = () => {
           </div>
         )}
       </main>
+
+      {/* Footer */}
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };

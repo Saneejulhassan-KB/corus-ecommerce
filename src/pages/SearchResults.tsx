@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Search, X } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
@@ -228,6 +229,11 @@ const SearchResults = () => {
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };

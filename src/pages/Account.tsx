@@ -18,6 +18,7 @@ import {
   Truck,
   Star,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Account = () => {
   const user = {
@@ -380,6 +381,10 @@ const Account = () => {
           </div>
         </div>
       </main>
+
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };

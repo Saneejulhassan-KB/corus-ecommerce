@@ -21,6 +21,7 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Checkout = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -486,6 +487,10 @@ const Checkout = () => {
             </Card>
           </div>
         </div>
+
+        <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
       </main>
     </div>
   );

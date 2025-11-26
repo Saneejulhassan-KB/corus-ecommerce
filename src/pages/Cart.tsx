@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Minus, Plus, X, ShieldCheck, Truck, ArrowLeft } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -269,6 +270,10 @@ const Cart = () => {
           </div>
         )}
       </main>
+
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };

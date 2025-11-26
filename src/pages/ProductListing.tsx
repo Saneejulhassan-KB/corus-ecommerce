@@ -9,6 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X } from "lucide-react";
 import { dummyProducts } from "@/data/dummyProducts";
+import Footer from "@/components/Footer";
 
 const ProductListing = () => {
   const [showFilters, setShowFilters] = useState(false);
@@ -216,6 +217,11 @@ const ProductListing = () => {
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <div className="pb-20  md:pb-0">
+        <Footer />
+      </div>
     </div>
   );
 };
