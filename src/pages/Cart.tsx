@@ -132,7 +132,7 @@ const Cart = () => {
                         <div className="flex items-center gap-2">
                           <span className="text-lg font-bold text-text-primary">
                             ₹{item.price.toLocaleString()}
-                          </span>
+                           </span>
                           <span className="text-sm text-text-secondary line-through">
                             ₹{item.originalPrice.toLocaleString()}
                           </span>

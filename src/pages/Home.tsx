@@ -8,6 +8,9 @@ import { ChevronRight, Star, Truck, Shield, Clock } from "lucide-react";
 import FourLayerGrid from "@/components/FourLayerGrid";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import PremiumFlashSale from "@/components/PremiumFlashSale";
+import FeaturedBrands from "@/components/FeaturedBrands";
+import CollectionGrid from "@/components/CollectionGrid";
 
 const Home = () => {
   // Mock product data
@@ -123,6 +126,12 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Premium Flash Sale */}
+        <PremiumFlashSale />
+
+        {/* Featured Brands */}
+        <FeaturedBrands />
+
         {/* Features */}
         {/* <section className="py-6 bg-surface">
           <div className="mx-auto px-4">
@@ -208,6 +217,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Collection Grid */}
+        <CollectionGrid />
 
         <section className="py-8 bg-background overflow-x-hidden">
           <div className="mx-auto px-4 max-w-full">
