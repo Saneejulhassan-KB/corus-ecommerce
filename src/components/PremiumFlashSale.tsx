@@ -1,5 +1,6 @@
 import { Timer, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 const PremiumFlashSale = () => {
   const flashSaleItems = [
@@ -45,6 +46,33 @@ const PremiumFlashSale = () => {
     },
   ];
 
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 5,
+    minutes: 42,
+    seconds: 12,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        } else {
+          clearInterval(timer);
+          return prev;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (val: number) => val.toString().padStart(2, "0");
+
   return (
     <section className="py-8">
       <div className="mx-auto px-4">
@@ -62,7 +90,9 @@ const PremiumFlashSale = () => {
               </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">Flash Sale</h2>
-                <p className="text-gray-300">Ends in 05:42:12</p>
+                <p className="text-gray-300">
+                  Ends in {formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
+                </p>
               </div>
             </div>
             <Button className="bg-[#D4AF37] hover:bg-[#C5A028] text-black font-bold">
