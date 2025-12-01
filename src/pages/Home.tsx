@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import PremiumFlashSale from "@/components/PremiumFlashSale";
 import FeaturedBrands from "@/components/FeaturedBrands";
 import CollectionGrid from "@/components/CollectionGrid";
+import ProductShowcase from "@/components/ProductShowcase";
+import TabbedProductGrid from "@/components/TabbedProductGrid";
 
 const Home = () => {
   // Mock product data
@@ -132,6 +134,9 @@ const Home = () => {
         {/* Featured Brands */}
         <FeaturedBrands />
 
+        {/* Tabbed Product Grid */}
+        <TabbedProductGrid />
+
         {/* Features */}
         {/* <section className="py-6 bg-surface">
           <div className="mx-auto px-4">
@@ -217,6 +222,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Product Showcase */}
+        <ProductShowcase />
 
         {/* Collection Grid */}
         <CollectionGrid />

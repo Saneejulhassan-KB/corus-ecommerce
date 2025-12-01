@@ -44,6 +44,22 @@ const PremiumFlashSale = () => {
       image: "https://cdn.mos.cms.futurecdn.net/QwvDLWZZiDMEmWj73xxASY-2000-80.jpg",
       discount: "55% OFF",
     },
+    {
+      id: 6,
+      name: "Smart Watch Series 8",
+      price: 3499,
+      originalPrice: 7999,
+      image: "https://cdn.mos.cms.futurecdn.net/qeL7SfLGo8o7EHH3RYAes3.jpg",
+      discount: "56% OFF",
+    },
+    {
+      id: 7,
+      name: "Gaming Keyboard RGB",
+      price: 1299,                                            
+      originalPrice: 2999,
+      image: "https://cdn.mos.cms.futurecdn.net/XMDNCcbVWnrYj3zdapKrGb-2000-80.jpg",
+      discount: "56% OFF",
+    },
   ];
 
   const [timeLeft, setTimeLeft] = useState({
@@ -102,7 +118,7 @@ const PremiumFlashSale = () => {
 
           {/* Items Grid */}
           <div className="p-6">
-            <div className="flex overflow-x-auto gap-4 md:grid md:grid-cols-3 lg:grid-cols-5 pb-2 md:pb-0 scrollbar-hide">
+            <div className="flex overflow-x-auto gap-4 md:grid md:grid-cols-4 lg:grid-cols-7 pb-2 md:pb-0 scrollbar-hide">
               {flashSaleItems.map((item) => (
                 <div 
                   key={item.id}
