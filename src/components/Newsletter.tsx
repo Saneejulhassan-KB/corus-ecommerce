@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Newsletter = () => {
   return (
-    <section className="py-12 bg-gradient-primary">
+    <section className="py-8 md:py-12 bg-gradient-primary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">
           Stay Updated with Latest Offers

@@ -13,6 +13,8 @@ import FeaturedBrands from "@/components/FeaturedBrands";
 import CollectionGrid from "@/components/CollectionGrid";
 import ProductShowcase from "@/components/ProductShowcase";
 import TabbedProductGrid from "@/components/TabbedProductGrid";
+import TrendingMasonry from "@/components/TrendingMasonry";
+import CuratedCollections from "@/components/CuratedCollections";
 
 const Home = () => {
   // Mock product data
@@ -134,35 +136,17 @@ const Home = () => {
         {/* Featured Brands */}
         <FeaturedBrands />
 
+        {/* Trending Masonry Section */}
+        <TrendingMasonry />
+
         {/* Tabbed Product Grid */}
         <TabbedProductGrid />
 
-        {/* Features */}
-        {/* <section className="py-6 bg-surface">
-          <div className="mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center max-w-xs"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-text-primary text-sm sm:text-base md:text-lg">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm text-text-secondary">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         {/* Categories */}
         <CategorySection />
+
+        {/* Curated Collections */}
+        <CuratedCollections />
 
         {/* Top Deals */}
         <section className="py-8 bg-surface">

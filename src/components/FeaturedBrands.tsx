@@ -19,7 +19,7 @@ const FeaturedBrands = () => {
           {brands.map((brand) => (
             <div 
               key={brand.id}
-              className="group flex flex-col items-center justify-center p-4 rounded-xl border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer bg-gray-50 hover:bg-white"
+              className="group flex flex-col items-center justify-center p-4 rounded-xl border border-gray-200 bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
               <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-3 transition-all duration-300">
                 <img 

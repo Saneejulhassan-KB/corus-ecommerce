@@ -4,7 +4,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 const ProductShowcase = () => {
   return (
-    <section className="py-12">
+    <section className="py-8 md:py-12">
       <div className="mx-auto px-4">
         <div 
           className="rounded-2xl overflow-hidden relative"
